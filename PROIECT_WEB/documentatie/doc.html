@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>FrOW Documentation</title>
+    <link rel="stylesheet" href="docstyle.css" />
+  </head>
+
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img
+          src="scholarly-html.svg"
+          width="227"
+          height="50"
+          alt="Scholarly HTML logo"
+        />
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>FrOW (Fruits On The Web)</h1>
+    </header>
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          Anița Ștefan-Andrei(<a href="https://github.com/AnitaStefan">@AnitaStefan</a>),
+          Gârbia Cosmin(<a href="https://github.com/GarbiaCosmin">@GarbiaCosmin</a>)
+        </dd>
+        <dt>License</dt>
+        <dd>
+          <p>
+            Built under MIT License Copyright &copy; 2024. All copyrights
+            reserved.
+          </p>
+          <p>
+            Permission is hereby granted, free of charge, to any person
+            obtaining a copy of this software and associated documentation files
+            (the "Software"), to deal in the Software without restriction,
+            including without limitation the rights to use, copy, modify, merge,
+            publish, distribute, sublicense, and/or sell copies of the Software,
+            and to permit persons to whom the Software is furnished to do so,
+            subject to the following conditions:
+          </p>
+          <ul>
+            <li>
+              <p>
+                The above copyright notice and this permission notice shall be
+                included in all copies or substantial portions of the Software.
+              </p>
+            </li>
+            <li>
+              <p>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+                EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+                OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+                NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+                HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+                WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+                FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+                OTHER DEALINGS IN THE SOFTWARE.
+              </p>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        FrOW (Fruits On The Web) is an educational and fun one 
+        aimed at primary school students, structured into three levels of difficulty
+        to tailor the gaming experience to the children's skills and knowledge. 
+        This document outlines the functionality of
+        FrOW and its underlying encoding mechanisms.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <h2>Introduction</h2>
+      <p>
+        The project "FrOW (Fruits On The Web)" was designed to provide an interactive 
+        and enjoyable way for children aged 3 to 12 to learn about vegetables and fruits. 
+        The game focuses on recognizing and naming various foods, encouraging vocabulary
+        development and nutritional knowledge.
+      </p>
+      <p>
+        How does the game work?
+        The game starts with a main menu where children can choose to start playing, 
+        learn about the game rules, select the mode of play (normal or full-screen), 
+        adjust the background music volume, or view the top players. The game features 
+        multiple difficulty levels from easy to hard, so every child can enjoy playing 
+        at their own level.
+      </p>
+      <p>
+        The game is designed to be user-friendly for all children. They can choose 
+        different difficulty levels and earn points by correctly recognizing the fruits 
+        and vegetables displayed on the screen. Each correctly completed level earns the 
+        child more points.
+      </p>
+      <p>
+        Easy Level: The child needs to recognize common fruits and vegetables in the 
+        displayed images, such as apples and bananas.
+      </p>
+      <p>
+        Medium Level: Here, slightly less common fruits and vegetables are presented, 
+        such as avocado or kiwi.
+      </p>
+      <p>
+        Hard Level: In this level, the fruits and vegetables are very uncommon or exotic,
+         making it challenging for a child to identify them quickly before time runs out.
+      </p>
+      <p>
+        Each level contains images of fruits or vegetables and related questions. 
+        Children must answer correctly to advance to the next level.
+      </p>
+      <p>
+        This documentation provides a comprehensive overview of FrOW's features
+        and functionalities, along with system requirements and user
+        instructions. It also details security measures safeguarding sensitive
+        information, prioritizing privacy and confidentiality.
+      </p>
+    </section>
+    <section id="structure">
+      <h2>Structure</h2>
+      <p>
+        The FrOW application consists of six web pages, adhering to
+        specific methodologies for structuring web applications. With a logical
+        and well-designed architecture, the application provides clear and
+        user-friendly features for all users. The subsequent lines will
+        delineate the architecture of each page.
+      </p>
+      <p>The application pages share the same header structured as follows:</p>
+      
+      <section id="component-1">
+        <h3>The <code>Header</code></h3>
+        <p>
+            The application header is located at the top of each main page and provides navigation and user account controls. This header is designed to adapt dynamically to the user's role, ensuring a tailored and secure user experience.
+        </p>
+        <figure type="sa:image">
+            <img src="images/header.png" alt="Header Image" />
+            <figcaption>Header Of The App</figcaption>
+        </figure>
+        <p>
+            The header includes quick-access links for essential features such as 'Report', 'Profile', 'Help', alongside system functionalities like 'Logout'. This ensures that users have immediate access to all necessary tools for effective interaction with the application.
+        </p>
+        <figure type="sa:image">
+            <img src="images/admin.png" alt="Admin Menu Image" />
+            <figcaption>Admin Menu</figcaption>
+        </figure>
+        <p>
+            The admin menu appears only when the user is logged into their account with the role of ADMIN. Otherwise, the button will not be displayed. This role-based access control is implemented to enhance security, preventing unauthorized access to administrative functionalities.
+        </p>
+        <p>
+            Further, the header's design incorporates responsive web design principles, ensuring it is accessible on devices of varying sizes from desktops to mobile phones. 
+        </p>
+    </section>    
+
+    <section id="component-2">
+      <h3>The <code>Index</code> Page</h3>
+      <p>
+          The main page of the application comprises a unique section where 
+          players can enter their names. After entering the name, the player 
+          can press the "Start Game" button to begin playing. This initial interaction
+          is designed to be straightforward and user-friendly, allowing players of all ages
+          to easily start the game without any complications.
+      </p>
+      <p>
+          Additionally, this page serves as the central hub for the application, providing
+          quick access to various settings and game information. The leaderboard displayed
+          on the right side of the page showcases top players and their scores, adding a 
+          competitive element and encouraging players to improve their performance.
+      </p>
+      <p>
+          Users can also navigate to other sections of the application such as the Settings or About page
+          from this main page, making it a comprehensive gateway to all functionalities of the app.
+          Accessibility features are integrated to ensure that all users, regardless of ability, can
+          navigate and interact with the application effortlessly.
+      </p>
+      <figure type="sa:image">
+          <img src="images/index.png" alt="Index Page Image" />
+          <figcaption>Main Page</figcaption>
+      </figure>
+  </section>  
+
+  <section id="component-3">
+    <h3>The <code>Login</code> Page</h3>
+    <p>
+      To access the game, users must log in to their accounts. The Login page features a bordered box containing fields for email and password. If a user already has an account, they can input their email address and password, then click the "Sign In" button. If a user does not have an account, they can click the "Sign Up" button to create one. Additionally, there is a section for users who have forgotten their passwords.
+    </p>
+    <figure type="sa:image">
+      <img src="images/login.png" alt="Login Page Image" />
+      <figcaption>Login Form</figcaption>
+    </figure>
+    <p>
+      The /login endpoint handles user authentication. It processes POST requests to verify user credentials and create a session.
+    </p>
+    <ol>
+      <li>
+        <strong>Request Handling:</strong>
+        <ul>
+          <li>Accepts only POST requests.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>User Authentication:</strong>
+        <ul>
+          <li>Retrieves email and password from the request body.</li>
+          <li>Validates the credentials against the database records using the verifyPassword function.</li>
+          <li>If valid, creates a session and generates a cookie.</li>
+          <li>
+            If invalid, returns error messages:
+            <ul>
+              <li>If the email does not exist: <code>401 Unauthorized</code> - "This FROW Account Doesn't Exist!"</li>
+              <li>If the password does not match: <code>401 Unauthorized</code> - "Incorrect Email/Password Combination!"</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Password Verification:</strong>
+        <ul>
+          <li>The verifyPassword function compares the provided password with the hashed password stored in the database.</li>
+          <li>It uses cryptographic methods to ensure the password entered by the user matches the secure hash stored.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Cookie Parsing:</strong>
+        <ul>
+          <li>The <code>parseCookies</code> function is crucial for extracting cookies from the request headers and managing session state.</li>
+          <li>This function splits the cookie header string, separates each cookie, and decodes its value, enabling easy access to cookie data throughout the application.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Cookie Creation:</strong>
+        <ul>
+          <li>Generates a cookie containing the user's email address.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Error Handling and Response Codes:</strong>
+        <ul>
+          <li><code><strong>400 Bad Request</strong></code>: Returned if the input validation fails. Possible causes could be malformed JSON or invalid format of email or password.</li>
+          <li><code><strong>401 Unauthorized</strong></code>: Returned if either the user is not found in the database or the password does not match.</li>
+          <li><code><strong>200 OK</strong></code>: Returned on successful authentication with a message "Successfully Logged In!" and the creation of the session cookie.</li>
+          <li><code><strong>500 Internal Server Error</strong></code>: Returned if there is an exception during the process, with a message "Login Failed!" indicating that an unexpected error occurred during the authentication process.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>      
+    
+    <section id="component-4">
+      <h3>The <code>Signup</code> Page</h3>
+      <p>
+        The Signup page serves as a registration form for new users to create
+        an account on the website. It includes fields for inputting the user's
+        first name, last name, email address, password, and other information.
+        The user is required to enter their information accurately to proceed with the sign-up process.
+        Additionally, there is a button labeled "Sign up" at the bottom of the form, which the user
+        can click to submit their details and complete the registration process.
+      </p>
+      <figure type="sa:image">
+        <img src="images/registration.png" alt="Signup Form" />
+        <figcaption>Signup Form</figcaption>
+      </figure>
+      <p>
+        The /register endpoint facilitates the creation of new user accounts
+        within the system. Here's an overview of its functionality:
+      </p>
+      <ol>
+        <li>
+          <strong>Request Handling:</strong>
+          <ul>
+            <li>Accepts only POST requests.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>User Registration:</strong>
+          <ul>
+            <li>Retrieves user registration data from the request body.</li>
+            <li>Validates the presence of all required fields and checks the validity of the email format.</li>
+            <li>Verifies that the password and password confirmation match and meet the required complexity criteria
+                (at least 8 characters, containing uppercase, lowercase, and numeric characters).</li>
+            <li>Checks if an account with the provided email already exists in the database. If it does,
+                returns a <code>409 Conflict</code> status code and the message "Email address already in use."</li>
+            <li>If all validations pass, hashes the password using the hashPassword function and inserts the user data into the database.</li>
+            <li>Upon successful registration, returns a <code>200 OK</code> status code with the message "Registration Completed Successfully!"</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Password Strength Checking:</strong>
+          <ul>
+            <li>Utilizes regular expressions to check if the password meets the complexity requirements
+                (uppercase, lowercase, numeric characters, and minimum length).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Password Hashing:</strong>
+          <ul>
+            <li>The hashPassword function is utilized to securely hash the user's password using a salt and a powerful hashing algorithm (PBKDF2).</li>
+            <li>The function generates a random salt for each password, which is combined with the password input to produce a unique hash.</li>
+            <li>This approach helps in safeguarding the user's password against various types of attacks such as rainbow table attacks.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Error Handling and Response Codes:</strong>
+          <ul>
+            <li><code><strong>400 Bad Request</strong></code>: Returned if the input validation fails. Possible causes could be malformed JSON
+                or invalid format of email or password.</li>
+            <li><code><strong>Conflict</strong></code>: Returned if the email address provided already exists in the database, with the message "This Email Address Already In Use!"</li>
+            <li><code><strong>Internal Server Error</strong></code>: Returned if there is an exception during the process,
+                with the message "Registration Failed!" indicating that an unexpected error occurred during the registration process.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Response Handling:</strong>
+          <ul>
+            <li>Sends appropriate HTTP status codes and JSON responses based on the outcome of the registration process.</li>
+            <li>The response includes a message indicating the result of the operation and, optionally, a boolean flag (success) to indicate
+                the success status of the operation.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>    
+    
+    <section id="component-5">
+      <h3>The <code>Forgot Password</code> Page</h3>
+      <p>
+        The "Forgot Password" page includes a single field for users to enter
+        their email address. If the email address exists in our database, users can proceed to reset their password.
+      </p>
+      <figure type="sa:image">
+        <img src="images/forgotpassword.png" alt="Forgot Password Form" />
+        <figcaption>Forgot Password Form</figcaption>
+      </figure>
+      <p>
+        The Forgot Password endpoint, along with the "/check-email" endpoint, handles the process of verifying if an email is registered and allowing a password reset accordingly. Here's a breakdown of its functionality:
+      </p>
+      <ol>
+        <li>
+          <strong>Request Handling:</strong>
+          <ul>
+            <li>Accepts only POST requests for both verifying the email and resetting the password.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Email Verification Process:</strong>
+          <ul>
+            <li>Retrieves and validates the email address from the request body.</li>
+            <li>Queries the database to check if the provided email exists, using the "/check-email" endpoint.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Error Handling and Response Codes:</strong>
+          <ul>
+            <li><code><strong>Bad Request</strong></code>: Returned if the email format is invalid, with the message "Invalid input."</li>
+            <li><code><strong>404 Not Found</strong></code>: Returned if no user account is associated with the provided email address, with the message "This Email Is Not Associated with An Account!"</li>
+            <li><code><strong>500 Internal Server Error</strong></code>: Returned if there is a server error while processing the email verification, with the message "Unable to verify email due to a server error."</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Success Response:</strong>
+          <ul>
+            <li><code><strong>200 OK</strong></code>: Returned if the email address is found in the database, with the message "Email address verified, please proceed to reset your password."</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section id="component-6">
+      <h3>The <code>Reset Password</code> Page</h3>
+      <p>
+        The Reset Password page is designed to help users who have forgotten their password to securely create a new one. It includes fields for the new password and its confirmation to ensure accuracy and security.
+      </p>
+      <figure type="sa:image">
+        <img src="images/resetpassword.png" alt="Reset Password Form" />
+        <figcaption>Reset Password Form</figcaption>
+      </figure>
+      <p>
+        This functionality is handled through the <code>/reset-password</code> endpoint, which processes the user's request to update their password.
+      </p>
+      <ol>
+        <li>
+          <strong>Client-Side Validation:</strong>
+          <ul>
+            <li>The form validates that the new password and confirmation match. If they do not, the user is immediately informed to correct the mismatch.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Server-Side Processing and Endpoint Details:</strong>
+          <ul>
+            <li>The new password, along with the user's email, is sent to the <code>/reset-password</code> endpoint using a POST request.</li>
+            <li>The server validates the email and ensures the new password does not match the current one stored in the database.</li>
+            <li>The new password is securely hashed using the <code>hashPassword</code> function before storage to ensure data protection.</li>
+            <li>The <code>verifyPassword</code> function may be used to ensure the new password does not match the existing one, enhancing security against password reuse.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Error Handling and Response Codes:</strong>
+          <ul>
+            <li><code><strong>400 Bad Request</strong></code>: Triggered by input validation errors such as non-matching passwords or a new password that matches the old one. The response includes a specific message, such as "Passwords do not match. Please re-enter your password" or "New Password Must Be Different from The Old One!"</li>
+            <li><code><strong>404 Not Found</strong></code>: Occurs if the provided email does not exist in our database. The response message is "User Not Found!"</li>
+            <li><code><strong>500 Internal Server Error</strong></code>: Used when an unexpected issue occurs during the process, typically with a message "Failed to Reset Password!" indicating that the process could not be completed due to server-side issues.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Success Response:</strong>
+          <ul>
+            <li><code><strong>200 OK</strong></code>: If the password is successfully updated, the user receives a positive feedback message "Your Password Has Been Changed!" and is redirected to the login page to access their account with the new password.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Interactive Feedback:</strong>
+          <ul>
+            <li>The form provides immediate feedback based on the server's response. Success and error messages are displayed prominently to ensure the user understands the outcome of their request.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>        
+      
+    <section id="component-7">
+      <h3>The <code>About</code> page</h3>
+      <p>
+          This page provides a concise overview of our Game FrOW, detailing how the game is structured and how it is played. Designed primarily for primary school students, the game is educational and entertaining, structured across three levels of difficulty to adapt the gaming experience to the children's skills and knowledge.
+      </p>
+      <figure type="sa:image">
+          <img src="images/about.png" alt="About Page Image" />
+          <figcaption>About Page</figcaption>
+      </figure>
+      <p>
+          <strong>First Level: Recognition and Writing of Common Fruits and Vegetables</strong><br>
+          In this level, players are presented with clear, easily recognizable images of common fruits and vegetables, such as apples, bananas, tomatoes, and carrots. The goal is to identify each fruit or vegetable and correctly write their names. This level focuses on consolidating basic knowledge in recognizing and naming common foods.
+      </p>
+      <p>
+          <strong>Second Level: Discovery of Exotic Fruits and Unusual Vegetables</strong><br>
+          At this level, players will encounter images of exotic fruits and unusual vegetables that are less commonly seen. Players will need to learn to identify and name these less familiar items. The purpose of this level is to expand the children's vocabulary and knowledge regarding the diversity of fruits and vegetables.
+      </p>
+      <p>
+          <strong>Third Level: Timer Challenge</strong><br>
+          The most advanced level introduces a time challenge where players face images of exotic fruits and vegetables similar to the second level, but with a 100-second timer. Players must quickly identify and correctly write the name of each fruit or vegetable, adding a layer of challenge that stimulates quick thinking and enhances learning under pressure.
+      </p>
+      <p>
+          Each level is designed to progressively enhance different skills and knowledge, promoting point acquisition for each correct answer. Additionally, the game includes a life system where each incorrect answer results in the loss of one life, with players starting with 5, 4, and 3 lives in each successive level, respectively. This system encourages attention and focus to avoid mistakes and progress through the game.
+      </p>
+  </section>  
+
+  <section id="component-8">
+    <h3>The <code>Report</code> page</h3>
+    <p>
+      On this page, users can submit suggestions or report system issues to administrators. Upon accessing the page,
+      users encounter a bordered box containing fields for email, and suggestions. Each field must be filled for the form
+      to be considered, with the "Suggestions" field requiring concise problem or suggestion descriptions. Subsequently, users can submit the
+      form by clicking the "Send Report" button located at the bottom of the bordered box.
+    </p>
+    <figure type="sa:image">
+      <img src="images/report.png" alt="Report form" />
+      <figcaption>Report Form</figcaption>
+    </figure>
+    <p>
+      The <code>/submit-report</code> endpoint manages the creation of contact feedback entries
+      for this page. It is designed to handle POST requests to process user-provided
+      contact information and store it in the database securely and efficiently.
+    </p>
+    <ol>
+      <li>
+        <strong>Request Handling:</strong>
+        <ul>
+          <li>
+            Only accepts POST requests. Any other method results in a 405
+            Method Not Allowed response, ensuring that the endpoint adheres to RESTful principles.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Input Validation:</strong>
+        <ul>
+          <li>
+            Ensures all required fields (email, feedback) are provided
+            and validates the email format using server-side logic to prevent incorrect data submissions.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Database Insertion:</strong>
+        <ul>
+          <li>
+            Inserts the validated contact information into the contact
+            table, utilizing database transactions to ensure data integrity and rollback capabilities on error.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Response Handling:</strong>
+        <ul>
+          <li>
+            Returns appropriate HTTP status codes and messages based on the
+            operation's success or failure, effectively communicating the outcome to the user.
+            <ul>
+              <li><strong>200 OK:</strong> "Report Submitted Successfully!" - indicates that the report was successfully received and recorded.</li>
+              <li><strong>400 Bad Request:</strong> "Invalid input" - returned when the input validation fails.</li>
+              <li><strong>404 Not Found:</strong> "User Not Found!" - returned when no user matches the email provided.</li>
+              <li><strong>500 Internal Server Error:</strong> "Failed to Submit Report!" - indicates a server-side error that prevented the report from being processed.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+</section>
+
+<section id="component-9">
+  <h3>The <code>Help</code> Button</h3>
+  <p>
+      On this page, users can access various help topics and FAQs by clicking the "Help" button. Upon clicking the button, users are directed to a dedicated help section that offers guidance on several common issues. The help section is designed to provide users with quick and easy access to solutions, enhancing their overall experience on the platform.
+  </p>
+  <figure type="sa:image">
+      <img src="images/help.png" alt="Help Button Image" />
+      <figcaption>Help Button Interface</figcaption>
+  </figure>
+  <p>
+      The help-section endpoint manages the display of help topics and FAQs. It handles GET requests to retrieve and present user-oriented assistance content from the database.
+  </p>
+  <ol>
+      <li>
+          <strong>Request Handling:</strong>
+          <ul>
+              <li>Only accepts GET requests. Any other method results in a 405 Method Not Allowed response.</li>
+          </ul>
+      </li>
+      <li>
+          <strong>Content Retrieval:</strong>
+          <ul>
+              <li>Fetches help topics and FAQ content from the help database table.</li>
+          </ul>
+      </li>
+      <li>
+          <strong>Content Presentation:</strong>
+          <ul>
+              <li>Displays the retrieved help topics and FAQs in a user-friendly format.</li>
+          </ul>
+      </li>
+      <li>
+          <strong>Response Handling:</strong>
+          <ul>
+              <li>Returns appropriate HTTP status codes and messages based on the operation's success or failure, including:</li>
+              <ul>
+                  <li><code><strong>200 OK</strong></code> - Indicates that the help content was successfully retrieved.</li>
+                  <li><code><strong>404 Not Found</strong></code> - Indicates that the requested content is not available.</li>
+                  <li><code><strong>500 Internal Server Error</strong></code> - Indicates a server-side error that prevented the retrieval of help content.</li>
+              </ul>
+          </ul>
+      </li>
+  </ol>
+</section>
+    
+<section id="component-10">
+  <h3>The <code>Settings</code> page</h3>
+  <p>
+    When the user clicks the settings button, the main menu window is hidden, 
+    and the settings menu is displayed. This page allows users to tailor their gaming experience through various settings:
+    <ul>
+      <li><strong>Fullscreen Mode:</strong> Toggle this switch to enable or disable fullscreen mode. Enabling fullscreen enhances the gaming view by utilizing the entire screen space, while disabling it reverts to the windowed view.</li>
+      <li><strong>Background Music:</strong> This switch controls the playback of background music, adding to or reducing distractions during gameplay based on user preference.</li>
+      <li><strong>Volume Control:</strong> Adjust the slider to increase or decrease the volume of the background music. This control is particularly useful to set the right audio level that complements the gaming environment without overpowering other audio sources.</li>
+    </ul>
+    Each setting is applied instantly, ensuring users can experiment and find their preferred setup without delay. Additional buttons for closing the settings menu and returning to the main menu are also available, facilitating seamless navigation.
+  </p>
+  <figure type="sa:image">
+    <img src="images/setari.png" alt="Settings page with various control toggles">
+    <figcaption>Settings Page</figcaption>
+  </figure>
+</section>
+
+      
+      <section id="component-11">
+        <h3>The <code>Start-Game</code> page</h3>
+        <p>
+          On this page, users can choose a difficulty level and start the game. The interface presents three difficulty options: Easy, Medium, and Hard. Each option is visually distinct and clearly labeled, making it straightforward for users of all ages to select the level that best suits their skills. Selecting a difficulty will lead directly into the game environment, where the chosen level's settings adjust the gameplay accordingly. This customization ensures that the game remains accessible and challenging for a wide range of players.
+        </p>
+        <figure>
+          <img src="images/start_game.png" alt="Start Game page showing difficulty options">
+          <figcaption>Select Difficulty Page</figcaption>
+        </figure>
+    </section>
+
+    <section id="component-12">
+      <h3>User Profile Management</h3>
+      <p>
+          The User Menu is an intuitive interface allowing users to manage various aspects of their profile easily. This section provides a brief overview of the available options within the User Menu, each designed to improve the user's experience by providing straightforward access to account customization features.
+      </p>
+      <ul>
+          <li><strong>Personal Info:</strong> Users can view and update their personal information ensuring their profile remains up-to-date.</li>
+          <li><strong>Edit Profile:</strong> This option allows users to edit their profile details, such as username, profile picture, and other relevant information.</li>
+          <li><strong>Change Password:</strong> Users can securely change their password to maintain account security.</li>
+      </ul>
+      <p>
+          Each option is accessible through a simple click, reflecting changes immediately. The user-friendly design of the menu ensures all settings are easily adjustable, enhancing the overall user interaction with the platform.
+      </p>
+      <figure>
+          <img src="images/profile-menu.png" alt="User Menu with options for personal info, edit profile, and change password">
+          <figcaption>Profile Main Page</figcaption>
+      </figure>
+  </section>
+
+      <section id="component-13">
+        <h3>The <code>Profile Page</code></h3>
+        <p>
+          In the main content area of this page, users can view and manage their personal information. This section is crucial for maintaining accurate user details and security settings.
+        </p>
+        <ul>
+            <li><strong>First Name:</strong> The user's given name. It's essential for personalization and communication.</li>
+            <li><strong>Last Name:</strong> The user's family name. Used in conjunction with the first name for identification and records.</li>
+            <li><strong>Email:</strong> The primary contact and login credential for the user. Email addresses are essential for account recovery and notifications.</li>
+            <li><strong>Phone:</strong> An additional contact detail that can be used for multi-factor authentication and direct communication.</li>
+            <li><strong>Birth Date:</strong> Used for age verification and can influence content and permissions within the application.</li>
+            <li><strong>Gender:</strong> Optional personal information that can be used for demographic analysis and personalization.</li>
+            <li><strong>Age:</strong> Calculated from the birth date or entered directly. Important for age-specific content and compliance.</li>
+            <li><strong>Role:</strong> Indicates the user's role within the application (e.g., ADMIN, user), which determines access levels and permissions.</li>
+            <li><strong>Terms and Conditions:</strong> Shows whether the user has agreed to the terms, which is critical for legal compliance.</li>
+        </ul>
+        <p>
+            This page also provides options to edit profile details or change the password, enhancing user control over account security and personal data.
+        </p>
+        <figure type="sa:image">
+            <img src="images/profile-info.png" alt="Profile Information Page">
+            <figcaption>Profile Page</figcaption>
+        </figure>
+    </section>
+
+    <section id="component-14">
+      <h3>The <code>Edit Profile</code> page</h3>
+      <p>
+        On this page, the user can change their first name, last name, email, phone, birth date, gender, and age. The page utilizes two endpoints to enable users to securely view and modify their profile details.
+      </p>
+      <figure type="sa:image">
+        <img src="images/profile-edit.png" alt="Edit profile form">
+        <figcaption>Edit Profile Form</figcaption>
+      </figure>
+      <p>
+        The <code>/current-user</code> endpoint retrieves the current user's data for display, ensuring the user can view their existing information before making updates. The <code>/edit-user1</code> endpoint manages POST requests to update user profile information.
+      </p>
+      <ol>
+        <li><strong>/current-user Endpoint:</strong>
+          <ul>
+            <li>Handles GET requests to fetch current user information.</li>
+            <li>Checks for user authentication and returns user data if authenticated.</li>
+            <li>Returns HTTP <strong>200 OK</strong> with user data on success.</li>
+            <li>Returns HTTP <strong>401 Unauthorized</strong> if user is not authenticated.</li>
+            <li>Returns HTTP <strong>404 Not Found</strong> if no user data is available.</li>
+          </ul>
+        </li>
+        <li><strong>/edit-user1 Endpoint:</strong>
+          <ul>
+            <li>Handles POST requests for updating profile data.</li>
+            <li>Requires all fields to be validated before updating the database.</li>
+            <li>Returns HTTP <strong>200 OK</strong> on successful update with a message of "User updated successfully!"</li>
+            <li>Returns HTTP <strong>400 Bad Request</strong> if input validation fails with a message of "Invalid input".</li>
+            <li>Returns HTTP <strong>401 Unauthorized</strong> if the user is not logged in.</li>
+            <li>Returns HTTP <strong>500 Internal Server Error</strong> on server failure with a message of "Failed to update user".</li>
+          </ul>
+        </li>
+        <li><strong>Input Validation:</strong>
+          <ul>
+            <li>Checks if all required fields are provided and valid.</li>
+            <li>Validates data types and formats (e.g., dates, emails).</li>
+          </ul>
+        </li>
+        <li><strong>Database Operation:</strong>
+          <ul>
+            <li>Updates the user's profile information in the database upon successful validation.</li>
+          </ul>
+        </li>
+        <li><strong>Response Handling:</strong>
+          <ul>
+            <li>Each endpoint returns appropriate HTTP status codes and messages based on the operation's success or failure.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        Error messages for these endpoints include:
+      </p>
+      <ul>
+        <li><code>"Invalid input"</code> - Returned when the provided data does not meet validation requirements.</li>
+        <li><code>"Unauthorized"</code> - Returned when the user tries to update profile information without being logged in.</li>
+        <li><code>"User not found"</code> - Returned when no user matches the session credentials for the `/current-user` endpoint.</li>
+        <li><code>"Failed to update user"</code> - Returned when an error occurs during the database operation for the `/edit-user1` endpoint.</li>
+        <li><code>"Error updating user"</code> - General error message for server-side issues on the `/edit-user1` endpoint.</li>
+      </ul>
+  </section>  
+
+  <section id="component-15">
+    <h3>The <code>Admin Main</code> page</h3>
+    <p>
+      This page is exclusively for the administrator. It greets the administrator and provides a menu with four buttons:
+      <ol>
+        <li><strong>Users:</strong> Leads to the user management page for administering user accounts and roles.</li>
+        <li><strong>Games:</strong> Opens a detailed list of games, showing player names, their scores, and the levels they have played, allowing the administrator to track game engagement and performance.</li>
+        <li><strong>User Reports:</strong> Takes the administrator to a page where they can view reports submitted by users, facilitating quick response to feedback and issues.</li>
+      </ol>
+    </p>
+    <figure type="sa:image">
+      <img src="images/admin-menu.png" alt="Administrator Main Page">
+      <figcaption>Administrator Main Page</figcaption>
+    </figure>
+</section>
+
+<section id="component-16">
+  <h3>The <code>Users Panel</code> page</h3>
+  <p>
+      The administrator can view all the users added to the system, delete any of them, edit their information by pressing the edit button, or add more users to the database by pressing the "Add user" button in the bottom left corner of the page. The page facilitates user management through several endpoints:
+  </p>
+  <figure type="sa:image">
+      <img src="images/admin-users.png" alt="adminmain-img" />
+      <figcaption>Users Table</figcaption>
+  </figure>
+  <p>
+      The <strong>Delete User</strong> endpoint enables an admin user to delete an existing user from the system. It handles POST requests and expects a user ID. Responses include success or error messages, such as 'Utilizatorul a fost șters cu succes!' or 'Utilizatorul nu a fost găsit!'.
+  </p>
+  <p>
+      The <strong>Users</strong> endpoint retrieves a list of all users in the system. It handles GET requests and ensures that only authenticated admin users can access the list of users. The endpoint validates the user's authorization and returns the users' data or an error message in cases such as 'Unauthorized' or 'Access forbidden'.
+  </p>
+  <p>
+      The <strong>Edit User</strong> endpoint manages POST requests to update user information. This endpoint requires detailed user data such as first name, last name, email, and role. Successful updates return messages like 'Utilizatorul a fost actualizat cu succes!', while failures or validation errors return appropriate error messages and HTTP status codes.
+  </p>
+  <p>
+      Here are the HTTP status codes used by these endpoints:
+      <ul>
+          <li><strong>200 OK:</strong> The request was successful, and the user's data was either fetched or updated correctly.</li>
+          <li><strong>400 Bad Request:</strong> The request was malformed or missing required fields.</li>
+          <li><strong>401 Unauthorized:</strong> The request lacked valid authentication credentials.</li>
+          <li><strong>403 Forbidden:</strong> The authenticated user does not have access to the requested resource.</li>
+          <li><strong>404 Not Found:</strong> The requested user does not exist.</li>
+          <li><strong>500 Internal Server Error:</strong> A server error occurred processing the request.</li>
+      </ul>
+  </p>
+</section>
+
+<section id="component-17">
+  <h3>The <code>User Reports</code> page</h3>
+  <p>
+      On this page, the administrator can access user reports which provide insights into user activities and system interactions. The reports are fetched from the system using a dedicated endpoint that ensures data integrity and security.
+  </p>
+  <figure type="sa:image">
+      <img src="images/admin-reports.png" alt="admin-reports-img" />
+      <figcaption>User Reports</figcaption>
+  </figure>
+  <p>
+      The <strong>Reports endpoint</strong> (/reports) retrieves an array of user reports, allowing the admin to view comprehensive details about user interactions. This endpoint handles GET requests and requires authentication.
+  </p>
+  <ol>
+      <li>
+          <strong>Request Handling:</strong>
+          <ul>
+              <li>Only accepts GET requests, rejecting all others with a 405 Method Not Allowed status.</li>
+              <li>Ensures that only authenticated admin users can retrieve reports by validating JWT tokens.</li>
+          </ul>
+      </li>
+      <li>
+          <strong>Response Handling:</strong>
+          <ul>
+              <li>Returns a list of reports with a 200 OK status if retrieval is successful.</li>
+              <li>Returns a <strong>401 Unauthorized</strong> status if the JWT token is invalid or missing.</li>
+              <li>Returns a <strong>403 Forbidden</strong> status if the logged-in user does not have the necessary permissions to access the reports.</li>
+              <li>Returns a <strong>500 Internal Server Error</strong> status if there are issues retrieving the data from the database.</li>
+          </ul>
+      </li>
+  </ol>
+  <p>
+      The system ensures the confidentiality and integrity of the reports by implementing robust security measures at the endpoint level, preventing unauthorized access and ensuring data accuracy.
+  </p>
+</section>
+
+<section id="component-18">
+  <h3>The <code>Game Leaderboard</code> page</h3>
+  <p>
+      This page displays the game leaderboard, showcasing players' IDs, names, scores, and the levels they have reached. It provides a competitive insight into game performance among users.
+  </p>
+  <figure type="sa:image">
+      <img src="images/admin-games.png" alt="game-leaderboard-img" />
+      <figcaption>Game Leaderboard</figcaption>
+  </figure>
+  <p>
+      The <strong>Leaderboard endpoint</strong> (/leaderboard) is responsible for fetching the scores from the database. This endpoint accepts only GET requests and is protected to ensure that only authenticated administrators can access the data.
+  </p>
+  <ol>
+      <li>
+          <strong>Request Handling:</strong>
+          <ul>
+              <li>Accepts only GET requests, rejecting all others with a 405 Method Not Allowed response.</li>
+              <li>Requires authentication with a JWT token to confirm administrator privileges.</li>
+          </ul>
+      </li>
+      <li>
+          <strong>Response Handling:</strong>
+          <ul>
+              <li>Returns a <strong>200 OK</strong> status with a JSON payload of the leaderboard data if the request is successful.</li>
+              <li>Returns a <strong>401 Unauthorized</strong> status if the JWT token is missing or invalid.</li>
+              <li>Returns a <strong>403 Forbidden</strong> status if the logged-in user does not have administrator privileges.</li>
+              <li>Returns a <strong>500 Internal Server Error</strong> status if there are issues accessing the database or processing the data.</li>
+          </ul>
+      </li>
+  </ol>
+  <p>
+      The system ensures data integrity and security by implementing strict access controls and using secure data transmission protocols to manage interactions with the leaderboard endpoint.
+  </p>
+</section>
+      
+<section id="component-19">
+  <h3>The <code>Leaderboard</code> Page</h3>
+  <p>
+    This page showcases the top players by score, allowing users to see who is leading in the game. The leaderboard is dynamically updated to reflect current player standings.
+  </p>
+  <figure type="sa:image">
+    <img src="images/Leaderboard.png" alt="leaderboard" />
+    <figcaption>Visual Display Of The Game Leaderboard</figcaption>
+  </figure>
+  <p>
+    The functionality of this page is supported by the Get Scores endpoint, which retrieves the latest and best player scores from the database.
+  </p>
+  <p>
+    <strong>Endpoint:</strong> <code>/get-scores</code>
+  </p>
+  <ol>
+    <li>
+      <strong>Request Handling:</strong>
+      <ul>
+        <li>Only accepts GET requests to ensure data is only retrieved and not modified.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Response Handling:</strong>
+      <ul>
+        <li>Returns a <strong>200 OK</strong> status with a JSON array of scores if the request is successful.</li>
+        <li>Returns a <strong>500 Internal Server Error</strong> status if there is a problem retrieving the scores from the database, along with an error message explaining the failure.</li>
+      </ul>
+    </li>
+  </ol>
+  <p>
+    The leaderboard data includes player names, scores, and their rank. The endpoint ensures that the data is always current and reflects the most recent and best scores submitted by players.
+  </p>
+  <p>
+    Additional functionality could include filtering options to view scores by date, game type, or other criteria, enhancing user engagement and interaction with the leaderboard.
+    The leaderboard of top players will also be available as an RSS feed.
+  </p>
+</section>
+
+<section id="component-20">
+  <h3>The <code>Leaderboard RSS Feed</code> Page</h3>
+  <p>
+    This page provides a live RSS feed of the game's leaderboard, allowing subscribers to receive real-time updates on top player rankings. The feed updates daily to reflect the most current scores and player standings.
+  </p>
+  <figure type="sa:image">
+    <img src="images/rss.png" alt="RSS Feed Example" />
+    <figcaption>Snapshot Of The RSS Feed In A Feed Reader</figcaption>
+  </figure>
+  <p>
+    The feed is generated dynamically through the Get Scores RSS endpoint, which provides structured data formatted for RSS readers.
+  </p>
+  <p>
+    <strong>Endpoint:</strong> <code>/rss</code>
+  </p>
+  <ol>
+    <li>
+      <strong>Request Handling:</strong>
+      <ul>
+        <li>
+          Only accepts GET requests, ensuring that the endpoint is used purely for data retrieval.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Response Handling:</strong>
+      <ul>
+        <li>
+          Returns a <strong>200 OK</strong> status with RSS formatted content when successful.
+        </li>
+        <li>
+          Returns a <strong>500 Internal Server Error</strong> status if there is a problem generating the RSS feed, along with an error message detailing the failure.
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <p>
+    The feed includes individual items for each top player, with details such as the player's name, score, game level, and the date and time when the score was recorded.
+  </p>
+</section>
+
+<section id="component-21">
+  <h3>The <code>Logout</code> Function</h3>
+  <p>
+    This feature allows users to securely log out of their account. When the logout button is clicked, the system will clear the user's session and redirect them to the login page.
+  </p>
+  <figure type="sa:image">
+    <img src="images/logout.png" alt="Logout Button" />
+    <figcaption>Logout Button</figcaption>
+  </figure>
+  <p>
+    <strong>Endpoint:</strong> <code>/logout</code>
+  </p>
+  <ol>
+    <li>
+      <strong>Request Handling:</strong>
+      <ul>
+        <li>
+          The endpoint accepts POST requests to ensure that the logout action is intentional and not triggered by inadvertently accessing a URL.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Response Handling:</strong>
+      <ul>
+        <li>
+          Returns a <strong>200 OK</strong> status and clears the user's session cookie when the logout is successful.
+        </li>
+        <li>
+          The response includes a success message indicating the user has been logged out.
+        </li>
+        <li>
+          In case of failure, an appropriate error message is displayed.
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <p>
+    The logout process involves clearing local storage data that may contain user-specific settings or credentials and ensures that subsequent accesses to the site require re-authentication.
+  </p>
+</section>
+
+<section id="component-22">
+  <h3>The <code>Fruits and Vegetables</code> Educational Game</h3>
+  <p>
+    This game is designed for primary school students to combine education with entertainment, tailored to various knowledge levels through three difficulty settings.
+  </p>
+  <figure type="sa:image">
+    <img src="images/nivel1.png" alt="Level 1" />
+    <figcaption>Level One: Recognizing And Writing Common Fruits And Vegetables</figcaption>
+  </figure>
+  <figure type="sa:image">
+    <img src="images/nivel2.png" alt="Level 2" />
+    <figcaption>Level Two: Discovering Exotic Fruits And Unusual Vegetables</figcaption>
+  </figure>
+  <figure type="sa:image">
+    <img src="images/nivel3.png" alt="Level 3" />
+    <figcaption>Level Three: Timer Challenge</figcaption>
+  </figure>
+  <p>
+    Each level is designed to progressively develop different skills and knowledge, with children earning points for correct answers and losing lives for incorrect ones.
+  </p>
+  <h4>Endpoint and Functionality Overview:</h4>
+  <ul>
+    <li>
+      <strong>Random Image Endpoints:</strong>
+      <ul>
+        <li><code>/random-easy-image</code>, <code>/random-medium-image</code>, <code>/random-hard-image</code> - These endpoints fetch random images from the server for each game level, ensuring the image has not been visited if possible. These support GET requests to provide new game challenges.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Answer Verification Endpoints:</strong>
+      <ul>
+        <li><code>/verify-easy-answer</code>, <code>/verify-medium-answer</code>, <code>/verify-hard-answer</code> - These POST endpoints accept user answers and check them against the database for accuracy, adjusting the user's score and lives based on correctness.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Game State Management Endpoints:</strong>
+      <ul>
+        <li><code>/update-easy-visited</code>, <code>/update-medium-visited</code>, <code>/update-hard-visited</code> - POST requests to these endpoints mark an image as visited to avoid repetition in the session.</li>
+        <li><code>/reset-easy-game</code>, <code>/reset-medium-game</code>, <code>/reset-hard-game</code> - POST requests to reset the game state to initial conditions after game completion or for a new start.</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>Success and Error Responses:</h4>
+  <ul>
+    <li>
+      <strong>Success Responses:</strong> Return a JSON object with <code>success: true</code> and a message or relevant data.
+      <ul>
+        <li>For example, image fetching endpoints return a Base64 encoded string of the image and its filename.</li>
+        <li>Answer verification endpoints confirm whether the user's answer was correct and update the game state accordingly.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Error Responses:</strong> Typically return a status code such as 404 (Not Found) or 500 (Internal Server Error) with an error message.
+      <ul>
+        <li>Common error messages include "Image not found" if no new images are available or "Failed to verify answer" if there is a server error during the answer checking process.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="component-23">
+  <h3>The <code>Game Over</code> Scenario</h3>
+  <p>
+    This section documents the functionalities associated with the end of the game, including disabling game buttons, resetting the game, saving scores, and displaying the end game message based on various conditions.
+  </p>
+  <figure type="sa:image">
+    <img src="images/game-over.png" alt="Game Over" />
+    <figcaption>Game Over Announcement</figcaption>
+  </figure>
+  <p>
+    <strong>Endpoint Summary:</strong>
+  </p>
+  <ul>
+    <li><code>/check-all-visited-{level}</code>: Checks if all items at a given difficulty level have been visited.</li>
+    <li><code>/save-score</code>: Saves the player's score after the game ends.</li>
+    <li><code>/reset-{level}-game</code>: Resets the game state for a given level, clearing visited items and resetting scores and lives.</li>
+  </ul>
+  <ol>
+    <li>
+      <strong>Disabling and Enabling Game Buttons:</strong>
+      Functions <code>disableGameButtons</code> and <code>enableGameButtons</code> manage the interactivity of the game controls based on the game state.
+    </li>
+    <li>
+      <strong>Resetting the Game:</strong>
+      The <code>resetGame</code> function is called to reset the game to its initial state, making all items unvisited and resetting the score and lives.
+      <ul>
+        <li><strong>200 OK</strong>: Indicates successful reset.</li>
+        <li><strong>500 Internal Server Error</strong>: Indicates failure to reset the game, possibly due to a server error.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Playing Again:</strong>
+      The <code>playAgain</code> function reinitializes the game settings and reloads the level, allowing the player to start afresh.
+    </li>
+    <li>
+      <strong>End-Game Message Display:</strong>
+      <code>showEndGameMessage</code> function triggers the display of a win or lose message based on whether the player has completed the game successfully or lost by running out of lives or time.
+    </li>
+    <li>
+      <strong>Saving Scores:</strong>
+      When a game ends, the score is sent to the <code>/save-score</code> endpoint to be recorded.
+      <ul>
+        <li><strong>200 OK</strong>: Score saved successfully.</li>
+        <li><strong>500 Internal Server Error</strong>: Score saving failed due to server issues.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Checking All Visited:</strong>
+      At the end of the game, the system checks if all items have been visited using the <code>/check-all-visited-{level}</code> endpoint to determine if the game was completed.
+      <ul>
+        <li><strong>200 OK</strong>: Successfully checked the visited state.</li>
+        <li><strong>500 Internal Server Error</strong>: Failed to check the visited state.</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+ 
+    <section id="semantics">
+      <h2>Actions</h2>
+      <p>
+        The primary actors engaged with the web application include users and
+        the administrators.
+      </p>
+      <p>
+        As a user, you will have the capability to perform the following
+        actions:
+      </p>
+      <ul>
+        <li>
+          You can create a player account and then connect to your account, 
+          you can choose different settings, such as music and volume, fullscreen, 
+          see your profile at any time and you can edit it. As well as choosing 
+          your difficulty level and playing. to send feedback or change your password.
+        </li>
+      </ul>
+      <p>
+        The administrator assumes the role of the second main actor. They are
+        depicted through the following actions:
+      </p>
+      <ul>
+        <li>
+          The administrator shares all actions of a user.
+          Additional actions for the administrator would include the ability to 
+          delete or edit information related to the user, manage information 
+          about Users (add, delete or edit), delete or edit data, receive feedback.
+        </li>
+      </ul>
+    </section>
+    <section id="scholarly-article">
+      <h2>Technologies</h2>
+      <p>
+        For this project, we used the following technologies:HTML, CSS, 
+        JavaScript and Node.js
+      </p>
+      <ul>
+        <li>
+          <p>
+            The technologies we used to make the FrOW game are: HTML, CSS, 
+            JavaScript and Node.js, which is an open-source, cross-platform 
+            JavaScript runtime that can run on Windows, Linux, Unix, macOS 
+            and many others. Node.js runs on the V8 JavaScript engine and 
+            executes JavaScript code outside of a web browser.
+          </p>
+          <p>
+            In addition, to store all the necessary information we use MongoDB, 
+            a document-oriented NoSQL database that stores data in JSON-like format. 
+            It is scalable, flexible and offers high performance for applications 
+            that require handling large amounts of unstructured data.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section typeof="sa:Conclusion" id="conclusion" role="doc-conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        In conclusion, FrOW (Fruits On The Web) is an educational web game 
+        designed to teach primary school students about fruits and vegetables 
+        through an engaging and structured gameplay experience. The game 
+        features various difficulty levels, scoring systems, and winning conditions. 
+        Implemented using HTML, CSS, JavaScript and Node.js, REST APIs, FrOW ensures 
+        seamless interaction and dynamic content delivery. Additionally, a 
+        leaderboard showcasing top players is available via an RSS feed. 
+        By combining education with entertainment, FrOW serves as a valuable 
+        tool for young learners, promoting both knowledge and engagement.
+      </p>
+    </section>
+    <section id="acks">
+      <h2>References</h2>
+      <ul>
+        <li>
+          <a href="https://tehnologii-web.vercel.app/">Laboratory Page</a>
+        </li>
+        <li>
+          <a href="https://edu.info.uaic.ro/web-technologies/">Course Page</a>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
