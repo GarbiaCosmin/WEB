@@ -1,0 +1,246 @@
+/* admin.css */
+/* Definirea stilurilor pentru pagina ADMIN */
+.admin-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('backgroundLoginImg.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-container {
+    display: flex;
+    width: 60%; 
+    max-width: 1000px; 
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    flex-direction: column; 
+    padding: 40px; 
+    animation: fadeIn 1s ease-in-out;
+}
+
+.admin-sidebar {
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    width: 98%;
+    margin-bottom: 10px; 
+    border-radius: 12px;
+}
+
+.admin-sidebar h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin: 20px 0;
+}
+
+.admin-sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.admin-sidebar ul li a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.admin-content {
+    flex-grow: 1;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin-top: 20px; 
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.admin-content h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-content p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Definirea stilurilor pentru TABEL */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+}
+
+.admin-table th {
+    background-color: #7d2ae8;
+    color: #fff;
+    font-weight: 600;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-table tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s;
+}
+
+/* Animatii */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.admin-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin-image-container img {
+    width: 100px;  
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block; 
+    font-size: 16px;
+    margin: 20px auto; 
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button:hover {
+    background: linear-gradient(115deg, #9f01ea 10%, #56d8e4 90%);
+    transform: scale(1.05);
+}
+
+/* Definirea stilurilor pentru butoanele de administrare */
+.admin-button {
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-button:hover {
+    background: linear-gradient(115deg, #9f01ea 10%, #56d8e4 90%);
+    transform: scale(1.05);
+}
+
+#reports-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#reports-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #3498db;
+}
+
+#reports-list li:hover {
+    background-color: #f9f9f9;
+}
+
+#reports-list li::before {
+    content: '\2022';
+    color: #3498db;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.back-to-home {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #ff5e62, #ff9966); 
+    border: none;
+    color: #fff;
+    padding: 8px 16px; 
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-home:hover {
+    background: linear-gradient(to right, #ff9966, #ff5e62); 
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}

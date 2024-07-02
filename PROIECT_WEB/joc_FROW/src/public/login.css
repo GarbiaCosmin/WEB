@@ -1,0 +1,386 @@
+/* login.css */
+/* Definirea stilurilor pentru pagina LOGIN */
+.login-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('backgroundLoginImg.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.login-container {
+    border-radius: 12px;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    perspective: 2700px;
+    overflow: hidden;
+    margin-left: -25px;
+}
+
+.login-container .login-cover {
+    border-radius: 0 12px 12px 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.login-container .login-cover .login-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.login-container .login-cover::before,
+.login-container .login-cover::after {
+    border-radius: 0 12px 12px 0;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #7d2ae8;
+    opacity: 0.5;
+    z-index: 12;
+}
+
+.login-container .login-cover img {
+    border-radius: 0 12px 12px 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.login-container .login-cover .login-text {
+    position: absolute;
+    z-index: 130;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-cover .login-text .login-text-1,
+.login-cover .login-text .login-text-2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+.login-cover .login-text .login-text-2 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.login-container .login-forms {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+
+.login-container .login-form-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-form-content .login-form {
+    width: calc(100% / 2 - 25px);
+}
+
+.login-forms .login-form-content .login-title {
+    position: relative;
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.login-forms .login-form-content .login-title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 31px;
+    background: #7d2ae8;
+}
+
+.login-forms .login-form-content .login-input-boxes {
+    margin-top: 30px;
+}
+
+.login-forms .login-form-content .login-input-box {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    border-bottom: 2px solid #B9BDCF;
+}
+
+.login-form-content .login-input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+
+.login-form-content .login-input-box input:focus,
+.login-form-content .login-input-box input:valid {
+    border-color: #7d2ae8;
+}
+
+.login-forms .login-form-content .login-button {
+    color: #fff;
+    margin-top: 40px;
+}
+
+.login-forms .login-form-content .login-button input {
+    color: #FFFFFF;
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    height: 50px;
+    width: 100%; 
+    font-size: 18px;
+}
+
+.login-forms .login-form-content .login-button input:hover {
+    background: linear-gradient(115deg, #9f01ea 10%, #56d8e4 90%); 
+    font-size: 25px; 
+    color: #FFFFFF;
+}
+
+.login-forms .login-form-content .login-text {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-forms .login-form-content .sign-up-text {
+    text-align: center;
+    width: 100%; 
+    margin-top: 20px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px;
+}
+
+.login-forms .login-form-content .change-password-text a {
+    color: #7d2ae8; 
+    font-weight: bold; 
+    font-size: 16px; 
+    margin-top: 20px; 
+    display: block; 
+    text-align: center; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.login-forms .login-form-content .change-password-text a:hover {
+    text-decoration: underline; 
+    color: #5b13b9;
+}
+
+.login-forms .login-form-content .sign-up-text a {
+    color: #7d2ae8; 
+    font-weight: bold; 
+    font-size: 16px; 
+    text-align: center; 
+    display: block; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.login-forms .login-form-content .sign-up-text a:hover {
+    text-decoration: underline; 
+    color: #5b13b9; 
+}
+
+.login-input-box label {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #757575;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+}
+
+.login-input-box input:focus + label,
+.login-input-box input:not(:placeholder-shown) + label {
+    top: -5px;
+    font-size: 12px;
+    color: #7d2ae8;
+}
+
+.login-input-box input:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-password {
+    margin-left: 10px;
+    font-weight: bold; 
+    font-size: 16px;
+    cursor: pointer;
+    color: #7d2ae8; 
+    user-select: none; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 5px;
+    position: absolute;
+    right: 0; 
+    bottom: 10px; 
+    background: none;
+    border: none;
+}
+
+.login-input-box input:focus + .login-label + .toggle-password,
+.login-input-box input:not(:placeholder-shown) + .login-label + .toggle-password {
+    color: #5b13b9; 
+}
+
+.remember-forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.remember-forgot-container label {
+    font-size: 16px;
+}
+
+.toggle-password:hover {
+    color: #5b13b9;
+}
+
+#message-box {
+    display: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+#message-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+#message-box.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: inherit;
+}
+
+.error .close-btn:hover {
+    color: #a00; 
+}
+
+.success .close-btn:hover {
+    color: #28a745; 
+}
+
+.remember-me-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.remember-me-checkbox label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    user-select: none;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 15%;
+}
+
+.remember-me-checkbox label::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #7d2ae8;
+    border-radius: 5px;
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.remember-me-checkbox input[type="checkbox"]:checked + label::before {
+    background: #7d2ae8;
+    border: none;
+}
+
+.remember-me-checkbox input[type="checkbox"]:checked + label::after {
+    content: "✔";
+    position: absolute;
+    left: 5px;
+    top: 45%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.change-password-text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    user-select: none;
+    padding-left: 10px;
+}

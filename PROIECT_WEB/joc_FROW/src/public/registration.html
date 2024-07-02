@@ -1,0 +1,134 @@
+<!-- registration.html -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Registration - Fruits On The Web</title>
+    <link rel="stylesheet" href="registration.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <header>Registration</header>
+            <div id="message-box">
+                <span id="message-text"></span>
+                <button id="close-message" class="close-btn">&times;</button>
+            </div>
+            <div class="progress-bar">
+                <div class="step">
+                    <p>Name</p>
+                    <div class="bullet"><span>1</span></div>
+                    <div class="check">✔</div>
+                </div>
+                <div class="step">
+                    <p>Contact</p>
+                    <div class="bullet"><span>2</span></div>
+                    <div class="check">✔</div>
+                </div>
+                <div class="step">
+                    <p>Birth</p>
+                    <div class="bullet"><span>3</span></div>
+                    <div class="check">✔</div>
+                </div>
+                <div class="step">
+                    <p>Submit</p>
+                    <div class="bullet"><span>4</span></div>
+                    <div class="check">✔</div>
+                </div>
+            </div>
+            <div class="form-outer">
+                <form id="registration-form" action="http://localhost:4000/register" method="POST">
+                    <div class="page slide-page">
+                        <div class="field">
+                            <div class="label">First Name</div>
+                            <input type="text" id="first-name-registration" name="first-name-registration" pattern="[A-Za-z]+" title="First name should only contain letters." required>
+                        </div>
+                        <div class="field">
+                            <div class="label">Last Name</div>
+                            <input type="text" id="last-name-registration" name="last-name-registration" pattern="[A-Za-z- ]+" title="Last name should only contain letters." required>
+                        </div>
+                        <div class="checkbox-field">
+                            <input type="checkbox" id="terms-conditions" name="terms-conditions" required>
+                            <label for="terms-conditions">I accept all terms & conditions</label>
+                        </div>
+                        <div class="field">
+                            <button class="firstNext next">Next</button>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="field">
+                            <div class="label">Email Address</div>
+                            <input type="email" id="email-registration" name="email-registration" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address." required>
+                        </div>
+                        <div class="field">
+                            <div class="label">Phone Number</div>
+                            <input type="tel" id="phone-registration" name="phone-registration" pattern="\d{10}" title="Phone number should be 10 digits long." required>
+                        </div>
+                        <div class="checkbox-field">
+                            <input type="checkbox" id="terms-conditions-2" name="terms-conditions" required>
+                            <label for="terms-conditions-2">I accept all terms & conditions</label>
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-1 prev">Previous</button>
+                            <button class="next-1 next">Next</button>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="field">
+                            <div class="label">Date of Birth</div>
+                            <input type="date" id="birth-date-registration" name="birth-date-registration" min="2000-01-01" max="2022-12-31" title="Please enter a valid date of birth." required>
+                        </div>
+                        <div class="field">
+                            <div class="label">Gender</div>
+                            <select id="gender-registration" name="gender-registration" required>
+                                <option value="" disabled selected>Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-field">
+                            <input type="checkbox" id="terms-conditions-3" name="terms-conditions" required>
+                            <label for="terms-conditions-3">I accept all terms & conditions</label>
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-2 prev">Previous</button>
+                            <button class="next-2 next">Next</button>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="field">
+                            <div class="label">Age</div>
+                            <input type="number" id="age-registration" name="age-registration" min="1" max="24" title="Please enter a valid age between 1 and 24." required>
+                        </div>
+                        <div class="field">
+                            <div class="label">Password</div>
+                            <input type="password" id="password-registration" name="password-registration" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}$" title="Password must contain at least one number, one uppercase and lowercase letter, one special character, and be at least 8 characters long." required>
+                        </div>
+                        <div class="checkbox-field">
+                            <input type="checkbox" id="terms-conditions-4" name="terms-conditions" required>
+                            <label for="terms-conditions-4">I accept all terms & conditions</label>
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-3 prev">Previous</button>
+                            <button class="submit">Signup</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="login-link">
+                    <p>Already have an account? <a href="login.html">Login now</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="image-section">
+            <div class="text-overlay">
+                <h1>Complete miles of journey with one step.</h1>
+                <p>Let's get started!</p>
+            </div>
+            <img src="registerFormImg.png" alt="Image">
+        </div>
+    </div>
+    <script src="registration.js"></script>
+</body>
+</html>

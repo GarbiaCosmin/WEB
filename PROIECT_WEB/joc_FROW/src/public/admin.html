@@ -1,0 +1,77 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Fruits On The Web</title>
+    <link rel="stylesheet" href="admin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="admin-page">
+    <div class="admin-container">
+        <div class="admin-sidebar">
+            <h2>Admin Menu</h2>
+            <ul>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#user_reports">User reports</a></li>
+            </ul>
+        </div>
+        <div class="admin-content">
+            <div class="admin-image-container">
+                <img src="administrator-xxl.png" alt="Administrator">
+            </div>
+            <div class="admin-header">
+                <a href="index.html" class="back-to-home">Back to Menu</a>
+            </div>
+            
+            <div id="users" class="admin-section">
+                <h2>Users</h2>
+                <button id="add-user-button" class="admin-button">Add User</button>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table-body">
+                        <!-- Utilizatorii vor fi inserati aici -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="games" class="admin-section">
+                <h2>Game Leaderboard</h2>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="game-leaderboard-table-body">
+                        <!-- Aici vor fi afișate înregistrările leaderboard-ului -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="user_reports" class="admin-section">
+                <h2>User reports</h2>
+                <p>Analyze suggestions and problems encountered by users.</p>
+                <ul id="reports-list">
+                    <!-- Aici vor fi afisate rapoartele utilizatorilor -->
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

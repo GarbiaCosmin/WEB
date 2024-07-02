@@ -1,0 +1,58 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Fruits On The Web</title>
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-cover">
+      <div class="login-front">
+        <img src="loginFormImg.png" alt="">
+        <div class="login-text">
+          <span class="login-text-1">Every new game is a <br> new adventure.</span>
+          <span class="login-text-2">Let's get connected!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-forms">
+      <div class="login-form-content">
+        <div class="login-form">
+          <div class="login-title">Login</div>
+          <div id="message-box">
+            <span id="message-text"></span>
+            <button id="close-message" class="close-btn">&times;</button>
+          </div>
+          <form id="login-form" action="http://localhost:4000/login" method="POST"> 
+            <div class="login-input-boxes">
+              <div class="login-input-box">
+                <input type="email" id="email-login" name="email-login" placeholder=" " pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address." required>
+                <label class="login-label">Enter your email</label>
+              </div>
+              <div class="login-input-box">
+                <input type="password" id="password-login" name="password-login" placeholder=" " pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}$" title="Password must contain at least one number, one uppercase and lowercase letter, one special character, and be at least 8 characters long." required>
+                <label class="login-label">Enter your password</label>
+                <span class="toggle-password">SHOW</span>
+              </div>
+              <div class="remember-forgot-container">           
+                <div class="change-password-text"><a href="forgot-password.html">Forgot password?</a></div>
+              </div>
+              <div class="login-button">
+                <input type="submit" value="Sign in">
+              </div>
+              <div class="sign-up-text">Don't have an account? <a href="registration.html">Signup now</a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

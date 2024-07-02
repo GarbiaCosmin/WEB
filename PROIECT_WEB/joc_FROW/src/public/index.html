@@ -1,0 +1,237 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>FrOW - Fruits On The Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <!-- Zona Logo-ului si Titlului -->
+        <div id="logo-title-section">
+            <img src="logo_title_game.png" alt="FAIVL Logo" id="logo-title">
+            <h1 id="main-menu-title">Fruits On The Web</h1>
+        </div>
+
+        <!-- Zona Butonului Help/Report -->
+        <button id="report-button">Report</button>
+        <div id="report-overlay">
+            <div id="report-form">
+                <h4 id="report-title">Report Issue/Suggestion</h4>
+                <form id="user-report-form">
+                    <label for="email-report">Email:</label>
+                    <input type="email" id="email-report" name="email-report" placeholder="Enter your email address" required><br><br>
+                            
+                    <label for="message-report">Message:</label>
+                    <textarea id="message-report" name="message-report" required placeholder="Describe the issue or suggestion."></textarea><br><br>
+                            
+                    <input type="submit" value="Send Report">
+                    <button id="close-report-button">Back To Menu</button>
+                </form>
+            </div>
+        </div>
+
+       <a href="profile.html"><button type="button" id="profile-button">Profile</button></a>
+       <a href="help.html"><button type="button" id="help-button">Help</button></a>
+       <a href="admin.html"><button type="button" id="admin-button">Admin</button></a>
+       <a href="http://localhost:4000/rss"><button type="button" id="rss-button">Rss</button></a>
+       <button id="logout-button">Logout</button>
+    </header>
+
+    <!-- Zona Principala a Jocului -->
+    <main>
+        <div id="fullscreen-view">
+            <!-- Zona Meniului Principal -->
+            <form id="menu-window">
+                <img src="image_menu_game.png" alt="FAIVL Menu" id="image-menu">
+                <input type="text" id="player-name-box" name="player-name-box" placeholder="Enter your name" required>
+                <input type="submit" value="Start Game">
+                <button type="button" id="settings-button">Settings</button>
+                <button type="button" id="instructions-button">About</button>
+            </form>
+
+            <!-- Zona Meniului Alegerii Dificultatii -->
+            <div id="difficulty-menu" style="display: none;">
+                <h5 id="difficulty-title">Select Your Difficulty</h5>
+                <button id="easy-level-button">Easy Level</button>
+                <button id="medium-level-button">Medium Level</button>
+                <button id="hard-level-button">Hard Level</button>
+                <button id="close-difficulty-button">Back To Menu</button>
+            </div>
+
+            <!-- Zona Nivelului Usor -->
+            <form id="easy-level-menu" style="display: none;">
+                <h5 id="easy-level-title">Guess The Name Of The Food</h5>
+
+                <div id="easy-lives-box">
+                    <span>Lives:</span>
+                    <span id="easy-lives-value">5</span> 
+                </div>
+
+                <div id="easy-points-box">
+                    <span>Points:</span>
+                    <span id="easy-points-value">0</span> 
+                </div>
+
+                <input type="text" id="easy-answer-box" name="easy-answer-box" placeholder="Enter the correct answer" required>
+                <img id="easy-level-image" src="" alt="Guess the image">
+                <input type="submit" value="Check" id="check-easy-answer-button">
+                <button type="button" id="next-easy-level-button">Next</button>
+                <button type="button" id="close-easy-level-button">Exit Game</button>
+            </form>
+
+            <!-- Zona Nivelului Mediu -->
+            <form id="medium-level-menu" style="display: none;">
+                <h5 id="medium-level-title">Guess The Name Of The Food</h5>
+
+                <div id="medium-lives-box">
+                    <span>Lives:</span>
+                    <span id="medium-lives-value">4</span> 
+                </div>
+
+                <div id="medium-points-box">
+                    <span>Points:</span>
+                    <span id="medium-points-value">0</span> 
+                </div>
+
+                <input type="text" id="medium-answer-box" name="medium-answer-box" placeholder="Enter the correct answer" required>
+                <img id="medium-level-image" src="" alt="Guess the image">
+                <input type="submit" value="Check" id="check-medium-answer-button">
+                <button type="button" id="next-medium-level-button">Next</button>
+                <button type="button" id="close-medium-level-button">Exit Game</button>
+            </form>
+
+            <!-- Zona Nivelului Greu -->
+            <form id="hard-level-menu" style="display: none;">
+                <h5 id="hard-level-title">Guess The Name Of The Food</h5>
+
+                <div id="hard-lives-box">
+                    <span>Lives:</span>
+                    <span id="hard-lives-value">3</span> 
+                </div>
+
+                <div id="hard-time-box">
+                    <span>Time:</span>
+                    <span id="hard-time-value">100</span> 
+                </div>
+
+                <div id="hard-points-box">
+                    <span>Points:</span>
+                    <span id="hard-points-value">0</span> 
+                </div>
+
+                <input type="text" id="hard-answer-box" name="hard-answer-box" placeholder="Enter the correct answer" required>
+                <img id="hard-level-image" src="" alt="Guess the image">
+                <input type="submit" value="Check" id="check-hard-answer-button">
+                <button type="button" id="next-hard-level-button">Next</button>
+                <button type="button" id="close-hard-level-button">Exit Game</button>
+            </form>
+            
+            <!-- Zona Meniului Setarilor -->
+            <div id="settings-menu" style="display: none;">
+                <h5 id="settings-title">Settings</h5>
+                <div id="fullscreen-items">
+                    <span class="fullscreen-text">FullScreen:</span>
+                    <label class="switch">
+                        <input type="checkbox" id="fullscreen-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <div id="music-control-items">
+                    <span class="music-text">Music:</span>
+                    <label class="switch">
+                        <input type="checkbox" id="music-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>                
+
+                <audio id="background-music" loop>
+                    <source src="http://localhost:4000/background_music.mp3" type="audio/mpeg">
+                </audio>
+
+                <div id="audio-items">
+                    <span class="volume-text">Volume:</span>
+                    <input type="range" id="volume-control" min="0" max="100" step="1" value="0"> 
+                    <span id="volume-value">0</span> 
+                </div>  
+                <button id="close-settings-button">Back To Menu</button>
+            </div>
+
+            <!-- Zona Meniului "Despre"/Instructiunilor -->
+            <div id="instructions-menu" style="display: none;">
+                <h5 id="instructions-title">Instructions</h5>
+                
+                <div id="instructions-content">
+                    <h2>Jocul este unul educativ și distractiv destinat elevilor din clasele primare 
+                        și se structurează pe trei nivele de dificultate pentru a adapta experiența 
+                        jocului la abilitățile și cunoștințele copiilor:</h2>
+                
+                    <h3>Primul Nivel: Recunoașterea și Scrierea Fructelor și Legumelor Uzuale</h3>
+                    <p>Aici, jucătorului îi vor fi prezentate imagini clare și ușor de recunoscut ale 
+                        fructelor și legumelor obișnuite, cum ar fi merele, bananele, roșiile, 
+                        morcovii etc. Obiectivul este să identifice fiecare fruct sau legumă și 
+                        să scrie corect denumirea acestora. Acest nivel se concentrează pe
+                        consolidarea cunoștințelor de bază în recunoașterea și numirea alimentelor comune.</p>
+        
+                    <h3>Al Doilea Nivel: Descoperirea Fructelor Exotice și Legumelor Neobișnuite</h3>
+                    <p>În acest nivel, jucătorul va fi expus la imagini cu fructe exotice și legume 
+                        mai neobișnuite, pe care nu le-ar întâlni în mod obișnuit. Jucătorul va trebui 
+                        să învețe să identifice și să numească aceste alimente mai puțin familiare. 
+                        Scopul acestui nivel este de a extinde vocabularul și cunoștințelor copiilor
+                         în ceea ce privește diversitatea fructelor și legumelor.</p>
+        
+                    <h3>Al Treilea Nivel: Provocarea Cronometrului</h3>
+                    <p>Acest nivel este cel mai avansat, în care jucătorul va fi expus la imagini
+                         cu fructe exotice și legume neobișnuite. Spre deosebire de nivelul doi, 
+                         aici jucătorul va trebui să răspundă rapid, deoarece va exista un cronometru 
+                         de 100 secunde. jucătorul trebuie să identifice și să scrie numele corect al 
+                         fructului sau legumei într-un timp limitat, ceea ce adaugă o provocare 
+                         suplimentară și stimulează gândirea rapidă.</p>
+        
+                    <p>Fiecare nivel este gândit pentru a consolida diferite abilități și cunoștințe 
+                        într-un mod progresiv, favorizând astfel obținerea de puncte pentru fiecare 
+                        răspuns corect. În plus, jocul include un sistem de vieți, unde fiecare 
+                        răspuns greșit duce la pierderea unei vieți din cele 5, 4 și respectiv 3 disponibile la 
+                        începutul jocului. Acest lucru încurajează atenția și concentrarea pentru 
+                        a evita greșelile și pentru a avansa în joc.</p>
+                </div>
+
+                <button id="close-instructions-button">Back To Menu</button>
+            </div>
+            
+            <!-- Zona Mesajului de Final -->
+            <div id="end-game-overlay">
+                <div id="end-game-message" class="hidden">
+                    <button class="close-button" id="close-button">&times;</button>
+                    <div id="end-game-text"></div>
+                    <button id="play-again-button" class="game-button">Play Again</button>
+                </div>
+            </div>                       
+        </div>
+        
+        <!-- Zona Clasamentului Jocului -->
+        <div id="leaderboard-window">
+            <h6 id="leaderboard-title">Leaderboard</h6>
+            <div id="table-content"> 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th style="width:70%">Player</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linii generate dinamic aici -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

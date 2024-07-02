@@ -1,0 +1,387 @@
+
+/* Stiluri pentru butonul de profil */
+#profile-button {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #56d8e4, #9f01ea);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#profile-button:hover {
+    background: linear-gradient(to right, #9f01ea, #56d8e4);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('backgroundLoginImg.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-container {
+    display: flex;
+    width: 60%; 
+    max-width: 1000px; 
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    flex-direction: column; 
+    padding: 40px; 
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-sidebar {
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    width: 50%; 
+    margin-bottom: 10px;
+    border-radius: 12px;
+    min-width: 760px;
+}
+
+.profile-sidebar h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 760;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.profile-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-sidebar ul li {
+    margin: 20px 0;
+}
+
+.profile-sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.profile-sidebar ul li a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.profile-content {
+    flex-grow: 1;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin-top: 20px; 
+    min-width: 760px;
+}
+
+.profile-section {
+    display: none;
+}
+
+.profile-section.active {
+    display: block;
+}
+
+.profile-content h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.info-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Stiluri pentru formularul de editare profil */
+#edit-profile-form, #change-password-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#edit-profile-form label, #change-password-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#edit-profile-form input, #change-password-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#edit-profile-form button, #change-password-form button {
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#edit-profile-form button:hover, #change-password-form button:hover {
+    background: linear-gradient(115deg, #9f01ea 10%, #56d8e4 90%);
+    transform: scale(1.05);
+}
+
+.close-button {
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block; 
+    font-size: 16px;
+    margin: 20px auto; 
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button {
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block; 
+    font-size: 16px;
+    margin: 20px auto; 
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button:hover {
+    background: linear-gradient(115deg, #9f01ea 10%, #56d8e4 90%);
+    transform: scale(1.05);
+}
+/* Stilizare pentru secțiunea "Personal Information" */
+.info-container {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.info-container p {
+    margin-bottom: 10px;
+    font-size: 18px; 
+    line-height: 1.6;
+    font-weight: bold;
+    color: #333; 
+    margin-left: 10px;
+    color: #0066cc; 
+    font-size: 20px; 
+    font-weight: normal; 
+    display: block; 
+    text-align: left; 
+}
+/* Stilizare generală pentru body și font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Containerul principal pentru profil */
+.profile-container {
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilizare pentru bara laterală (sidebar) */
+.profile-sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.profile-sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.profile-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.profile-sidebar ul li a {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-sidebar ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Stilizare pentru conținutul principal */
+.profile-content {
+    width: 75%;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.profile-header .close-button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.profile-header .close-button:hover {
+    background-color: #ccc;
+}
+
+/* Stilizare pentru secțiunile profilului */
+.profile-section {
+    display: none;
+    padding: 20px;
+}
+
+.profile-section.active {
+    display: block;
+}
+
+.profile-section h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Stilizare pentru formularul de editare profil */
+#edit_profile_form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#edit_profile_form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#edit_profile_form input[type="text"],
+#edit_profile_form input[type="email"],
+#edit_profile_form input[type="date"],
+#edit_profile_form select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#edit_profile_form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#edit_profile_form button:hover {
+    background-color: #45a049;
+}
+
+.back-to-home {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #ff5e62, #ff9966);
+    border: none;
+    color: #fff;
+    padding: 8px 16px; 
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-home:hover {
+    background: linear-gradient(to right, #ff9966, #ff5e62); 
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
